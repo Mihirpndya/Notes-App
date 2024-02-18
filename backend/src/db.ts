@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { Schema, Document } from "mongoose";
 
 mongoose.connect(
-	"mongodb+srv://mihir_pandya:sA2QTDKcBYkhXe6g@cluster0.jyjb85p.mongodb.net/Notes"
+	"---your mongodb uri here==="
 );
 
 interface Note extends Document {
