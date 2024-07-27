@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import axios from "axios";
+import { Textarea } from "@material-tailwind/react";
 
 const EditCard = ({
   existingTitle,
@@ -22,7 +23,7 @@ const EditCard = ({
 
   return (
     <div className="fixed inset-0 h-screen flex justify-center items-center backdrop-blur-sm bg-white/30 z-[10]">
-      <div className="w-[60vh] h-[60vh] bg-white border border-gray-200 rounded-lg shadow dark:bg-yellow-200 dark:border-gray-500 p-4 ">
+      <div className="w-[60vh] h-[60vh] rounded-lg shadow bg-gradient-to-b from-amber-200 to-amber-300 p-4 ">
         <div className="flex justify-end">
           <div>
             <button
@@ -36,29 +37,31 @@ const EditCard = ({
         </div>
         <div className="overflow-hidden pt-2">
           <div className="p-2">
-            <textarea
+            <Textarea
               type="text"
               placeholder=" Title"
               defaultValue={existingTitle}
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
-              className=" bg-brown-500 h-full w-full rounded-sm p-1"
+              className="border-none bg-gradient-to-b from-amber-200 h-full w-full rounded-sm p-1"
             />
           </div>
 
           <div className="p-2">
-            <textarea
+          <Textarea
+              rows={6}
               type="text"
               placeholder="Description"
               defaultValue={existingDescription}
               onChange={(e) => {
                 setDescription(e.target.value);
               }}
-              className=" bg-brown-500 h-full w-full rounded-sm p-1"
+              className="border-none bg-gradient-to-b from-amber-200  h-full w-full"
             />
           </div>
         </div>
+        
         <div className="flex justify-end">
           <button
             onClick={() => {
@@ -100,3 +103,11 @@ const EditCard = ({
 };
 
 export default EditCard;
+
+
+
+// defaultValue={existingTitle}
+//               onChange={(e) => {
+//                 setTitle(e.target.value);
+//               }}
+

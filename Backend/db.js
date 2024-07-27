@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "DB connection link here",
+  "mongodb+srv://mihir_pandya:q7YFKX2j0rXWqNvP@cluster0.jyjb85p.mongodb.net/todo",
 );
 
 const todoSchema = mongoose.Schema({

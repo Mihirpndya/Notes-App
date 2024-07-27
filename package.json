@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "heroicons": "^2.1.5",
+    "tailwindcss-textshadow": "^2.1.3"
+  }
+}

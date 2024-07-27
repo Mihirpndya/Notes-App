@@ -20,7 +20,7 @@ const Modal = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/30 z-[10]">
-      <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-yellow-200 dark:border-gray-500 p-4 max-w-lg w-full relative">
+      <div className="bg-white  shadow-lg shadow-gray-300 rounded-lg shadow bg-gradient-to-b from-amber-200 to-amber-300 dark:border-gray-500 p-4 max-w-lg w-full relative">
         <div className="pb-2">
           <h2 className="text-xl font-semibold">{title}</h2>
           <button
@@ -39,12 +39,12 @@ const Modal = ({
               onClose();
               setOnEdit(true);
             }}
-            className="my-3 mx-3 px-6 py-1 rounded-md border-1 shadow-sm shadow-slate-200 bg-sky-300 hover:bg-sky-400 border-black"
+            className="my-3 mx-3 px-6 py-1 rounded-md border-1 shadow-md shadow-gray-400 bg-sky-300 hover:bg-sky-400 border-black"
           >
             Edit
           </button>
           <button
-            className="my-3 mx-3 px-6 py-1 rounded-md border-1 shadow-sm shadow-slate-200 bg-sky-300 hover:bg-sky-400 border-black"
+            className="my-3 mx-3 px-6 py-1 rounded-md border-1 shadow-md shadow-gray-400 bg-sky-300 hover:bg-sky-400 border-black"
             onClick={() => {
               onClose();
               removeNote(_id);
