@@ -21,7 +21,7 @@ const Home = () => {
 			<div className="flex justify-center">
 				<div className="fixed z-[5] p-20 ">
 					{newNote ? (
-						<div className="flex flex-cols md:items-center justify-center w-[60vh] h-[60vh] shadow-lg shadow-slate-400 backdrop-blur-sm bg-white/30  backdrop-blur-sm bg-white/30">
+						<div className="flex flex-cols md:items-center justify-center w-[60vh] h-[60vh] shadow-lg shadow-slate-400 backdrop-blur-md bg-white/30 ">
 							<ViewCard setNewNote={setNewNote} setNotes={setNotes} />
 						</div>
 					) : (

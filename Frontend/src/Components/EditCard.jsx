@@ -23,7 +23,7 @@ const EditCard = ({
 
   return (
     <div className="fixed inset-0 h-screen flex justify-center items-center backdrop-blur-sm bg-white/30 z-[10]">
-      <div className="w-[60vh] h-[60vh] rounded-lg shadow bg-gradient-to-b from-amber-200 to-amber-300 p-4 ">
+      <div className="w-[60vh] h-[60vh] rounded-lg  shadow bg-gradient-to-b from-amber-200 to-amber-300 p-4 ">
         <div className="flex justify-end">
           <div>
             <button
@@ -61,7 +61,7 @@ const EditCard = ({
             />
           </div>
         </div>
-        
+
         <div className="flex justify-end">
           <button
             onClick={() => {

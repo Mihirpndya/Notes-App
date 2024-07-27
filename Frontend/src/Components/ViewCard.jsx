@@ -19,7 +19,7 @@ const ViewCard = ({ title, description, setNewNote, setNotes, _id, notes }) => {
   };
 
   return (
-    <div className="h-full w-full rounded-lg shadow-lg shadow-gray-300 bg-gradient-to-b from-amber-200 to-amber-300  p-4 ">
+    <div className="h-full  w-full border-slate-600 rounded-lg shadow-lg shadow-gray-300 bg-gradient-to-b from-amber-200 to-amber-300 p-4 ">
       <div className="flex justify-end">
         <div>
           {(title && description) == null ? (
