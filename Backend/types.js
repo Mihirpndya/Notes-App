@@ -1,10 +1,13 @@
 const zod = require("zod");
+
 const createTodoSchema = zod.object({
   title: zod.string(),
   description: zod.string(),
+  userId: zod.string(),
 });
 
 const updateSchema = zod.object({
+
   _id: zod.string(),
   title: zod.string(),
   description: zod.string(),

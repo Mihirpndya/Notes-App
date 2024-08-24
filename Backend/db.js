@@ -1,18 +1,47 @@
-//mongodb+srv://mihir_pandya:XVEOLFJe623HVE0u@cluster0.jyjb85p.mongodb.net/
+
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb url here"
-);
+mongoose.connect("Db url here..");
 
-const todoSchema = mongoose.Schema({
-  title: String,
-  description: String,
-  completed: Boolean,
+const users = mongoose.Schema({
+	username: {
+		type: String,
+		required: true,
+		unique: true,
+		trim: true,
+		lowercase: true,
+		minLength: 3,
+		maxLength: 30,
+	},
+	password: {
+		type: String,
+		required: true,
+		minLength: 6,
+	},
+	firstName: {
+		type: String,
+		required: true,
+		minLength: 2,
+	},
+	LastName: {
+		type: String,
+	},
 });
 
-const todo = mongoose.model("todos", todoSchema);
+const noteSchema = mongoose.Schema({
+	title: String,
+	description: String,
+	userId: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "User",
+		required: true,
+	},
+});
+
+const Note = mongoose.model("Notes", noteSchema);
+const User = mongoose.model("User", users);
 
 module.exports = {
-  todo: todo,
+	Note: Note,
+  User: User,
 };

@@ -84,7 +84,7 @@ const EditCard = ({
               setNotes(newNote);
 
               axios
-                .put("http://localhost:3000/updateNote", data)
+                .put("http://localhost:3000/api/v1/notes/updateNote", data)
                 .then((response) => {
                   console.log("successfully updated noted");
                 })

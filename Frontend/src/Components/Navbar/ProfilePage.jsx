@@ -38,7 +38,8 @@ function ProfilePage() {
 			closeMenu();
 		},
 		"Sign Out": () => {
-			navigate("/login");
+			localStorage.removeItem("token");
+			navigate("/signin");
 			closeMenu();
 		},
 	};

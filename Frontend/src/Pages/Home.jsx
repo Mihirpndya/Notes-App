@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ViewCard from "./ViewCard";
-import Header from "./Navbar/Header";
+import ViewCard from "../Components/ViewCard";
+import Header from "../Components/Navbar/Header";
+import { useSearchParams } from "react-router-dom";
 
 const Home = () => {
 	const [notes, setNotes] = useState([]);
 	const [newNote, setNewNote] = useState(false);
-
+	const [searchParams, setSearchParams] = useSearchParams();
+	const userId = searchParams.get("userId");
 	useEffect(() => {
-		axios.get("http://localhost:3000/getTodos").then((response) => {
-			let res = setNotes(response.data.notes);
-		});
+		console.log(userId);
+		const getNotes = async () => {
+			axios
+				.get(
+					"http://localhost:3000/api/v1/notes/getNotes",
+					{
+						headers: {
+							Authorization: "Bearer " + localStorage.getItem("token"),
+						},
+					}
+				)
+				.then((response) => {
+					setNotes(response.data.notes);
+				});
+		};
+		getNotes();
 	}, []);
 
 	return (
